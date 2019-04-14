@@ -122,6 +122,10 @@ a {
 	padding: 15px;
 }
 
+header {
+	background-color: white;
+}
+
 header pre:nth-of-type(1) {
 	font-family: geomanist-regular;
 	margin: 15px 0 0 0;
@@ -939,7 +943,17 @@ input:required {
 
 	h2 {
 		font-size: 32px;
+		width: auto !important;
 	}
+
+	.sect-2 h3 {
+		margin: 10px;
+	}
+
+	.contact-info h3 {
+		padding: 30px;
+	}
+
 	.item0 { grid-area: header; }
 	.item1 { grid-area: intro; }
 	.item2 { grid-area: about; }
@@ -1029,6 +1043,25 @@ input:required {
 
 	#questionaire-submit-btn {
 		display: block !important;
+	}
+
+	.card {
+		margin: 0 auto;
+	}
+
+
+	#contact { grid-area: header; }
+	.contact-col { grid-area: contact-col; }
+	#contact-form { grid-area: contact-form; }
+
+	.contact-wrapper {
+		width: 70%;
+		height: auto;
+		margin: 0 auto;
+		display: grid;
+		grid-template-areas:
+    'header header header header header header'
+    'contact-col contact-col contact-col contact-form contact-form contact-form';
 	}
 
 }
