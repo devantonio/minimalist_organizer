@@ -15,6 +15,19 @@ body {
   src: url(../assets/fonts/geomanist-thin-webfont.ttf);
 }
 
+
+input[type]:focus:not([type=submit]), textarea:focus {
+	border: 1px solid #3767AE !important;
+}
+
+input {
+	padding: 0 5px;
+}
+
+u, u a{
+	color: #5694FF;
+}
+
 .logo_container {
 	width: 55px;
 	display: inline-block;
@@ -72,7 +85,7 @@ float: right;
 
 
 .confirmation-start-left {
-	left: calc(100% - 85%);
+	left: calc(50% - 125px);
 	transition: .2s;
 }
 
@@ -123,7 +136,7 @@ a {
 }
 
 header {
-	background-color: white;
+	background: white;
 }
 
 header pre:nth-of-type(1) {
@@ -375,7 +388,7 @@ img {
 	width: 97%;
 	height: 30px;
     margin: 5px 0;
-    padding: 0 0 3px 5px;
+    padding: 0 5px;
     border-radius: 3px;
     border: 1px solid #e7e7e7;
     font-size: 14px;
@@ -407,8 +420,8 @@ img {
 	text-align: center;
 	font-size: 13px;
 	border-radius: 2px;
-	background: #EC4D37;
-	border: 2px solid #EC4D37;
+	border: none;
+	background: #4caf50;
 	color: #fff;
 	font-weight: 422;
 	font-family: geomanist-regular;
@@ -434,14 +447,16 @@ footer ul li {
 }
 
 
+.get-started-wrapper , .services , .deskop-grid-about {
+	margin: 130px auto !important;
+}
 
 
-
-.intro h2 , .get-started-wrapper h2{
+#contact,#services,#started,.intro h2 , .get-started-wrapper h2{
 	font-weight: initial;
 	width: 200px;
 	text-align: center;
-	margin: 50px auto;
+	margin: 0 0 50px !important;
 }
 
 .login-modal h3, .register-modal h3,
@@ -495,7 +510,7 @@ footer ul li {
 	font-size: 13px;
 	border-radius: 2px;
 	background: #fff;
-	border: 1px solid #3767AE;
+	border: 1px solid #000;
 	color: #000;
 	font-weight: 422;
 	font-family: geomanist-regular;
@@ -940,6 +955,10 @@ input:required {
 
 
 @media (min-width: 1024px) {
+	header ul li a:hover {
+		color: #3767AE;
+		transition: .1s;
+	}
 
 	h2 {
 		font-size: 32px;
@@ -1062,6 +1081,24 @@ input:required {
 		grid-template-areas:
     'header header header header header header'
     'contact-col contact-col contact-col contact-form contact-form contact-form';
+	}
+
+	.contact-wrapper ul:nth-of-type(2) li:nth-child(n+3) {
+		padding: 26px 24px;
+		font-size: 20px;
+	}
+
+	.contact-wrapper ul li {
+		padding: 24px 0;
+		font-size: 20px;
+	}
+
+	.contact-wrapper ul:nth-of-type(2) {
+		color: gray;
+	}
+
+	.contact-wrapper hr {
+		display: none;
 	}
 
 }

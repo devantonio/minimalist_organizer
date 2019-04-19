@@ -20,10 +20,10 @@ require '../vendor/autoload.php';
         $start = trim(filter_input(INPUT_POST,"start", FILTER_SANITIZE_STRING));
         $deadline    = trim(filter_input(INPUT_POST,"deadline", FILTER_SANITIZE_STRING));
 
-	    // $files_tmp_name = $_FILES['files']['tmp_name'];
-	    // $files = $_FILES['files']['name']; 
-	    // $fileSize = $_FILES['files']['size'];
-     //    $file_error = $_FILES['files']['error'];
+	    $files_tmp_name = $_FILES['files']['tmp_name'];
+	    $files = $_FILES['files']['name']; 
+	    $fileSize = $_FILES['files']['size'];
+        $file_error = $_FILES['files']['error'];
         
         $other_info = trim(filter_input(INPUT_POST,"other-info", FILTER_SANITIZE_SPECIAL_CHARS));
  		$name = trim(filter_input(INPUT_POST,"name", FILTER_SANITIZE_STRING));
@@ -101,9 +101,9 @@ $mail->addAddress('devantonio.inq@gmail.com');     // Add a recipient
     
 
 
-// if(!empty($files)) {
-//     $mail->AddAttachment($files_tmp_name, $files);
-// } 
+if(!empty($files)) {
+    $mail->AddAttachment($files_tmp_name, $files);
+} 
 		$mail->Subject = "";
 
 		

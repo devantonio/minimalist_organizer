@@ -9,9 +9,9 @@ use PHPMailer\PHPMailer\Exception;
 require '../vendor/autoload.php';
 		
 		
-		$contact_name = trim(filter_input(INPUT_POST,"contact-name", FILTER_SANITIZE_STRING));
+		$contact_name = filter_input(INPUT_POST,"contact-name", FILTER_SANITIZE_STRING);
 		 $contact_email  = trim(filter_input(INPUT_POST,"contact-email", FILTER_SANITIZE_EMAIL));
-		  $message  = trim(filter_input(INPUT_POST,"message", FILTER_SANITIZE_EMAIL));
+		  $message  = filter_input(INPUT_POST,"message", FILTER_SANITIZE_SPECIAL_CHARS);
 
 
 	

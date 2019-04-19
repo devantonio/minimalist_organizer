@@ -243,12 +243,27 @@ remove_border();
 
 
 
-
+console.log(window.innerWidth);
    
 
 
 $("#questionaire-form").submit(function(e){
   e.preventDefault();
+
+if (window.innerWidth > 1024) {
+	if(tabs[0].parentElement[7].checked == true && $("#other1").val() == "") {
+	$("#other1").css("border", "1px solid #ff4444");
+	return false;
+} else {
+	$("#other1").css("border", "1px solid #e7e7e7");
+}
+	if ($("#email").val() == "" || $("#name").val() == "" || $("#start").val() == "" || $("#deadline").val() == "") {
+		return false;
+	}
+
+}
+
+
   var formdata = new FormData($('#questionaire-form')[0]);
   var formdata1 = new FormData($('#contact-form')[0]);
 var patt = new RegExp("@");
@@ -316,7 +331,14 @@ if(xhttp.responseText.includes("Message could not be sent.") == true) {
 $(".checkbox-container>img").attr("src", "assets/icons/check-icon.svg");
       alert_msg();
 
-console.log(questionaire_form);
+
+if (window.innerWidth > 1024) {
+	for (n = 0; n < tabs.length; n++) {
+				tabs[n].style.display = "block";
+		}
+	next.style.display = "none";
+}
+
 	 
     }console.log(xhttp.readyState);
   };console.log(xhttp.status);
